@@ -17,6 +17,7 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState("#home");
 
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (latest) => {
@@ -24,6 +25,27 @@ export function Navbar() {
     });
     return () => unsubscribe();
   }, [scrollY]);
+
+  useEffect(() => {
+    const sectionIds = ["home", "story", "menu", "gallery", "location"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveHref(`#${entry.target.id}`);
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0.01 }
+    );
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -61,15 +83,32 @@ export function Navbar() {
             aria-label="Primary Navigation"
             className="hidden items-center gap-8 lg:flex"
           >
-            {NAV_LINKS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-xs uppercase tracking-[0.2em] text-[#E9E1D2]/85 transition-colors duration-300 hover:text-[#C7D5A5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C7D5A5]"
-              >
-                {item.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((item) => {
+              const isActive = activeHref === item.href;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setActiveHref(item.href)}
+                  className={`group relative py-1.5 text-xs uppercase tracking-[0.2em] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C7D5A5] ${
+                    isActive
+                      ? "text-[#C7D5A5]"
+                      : "text-[#E9E1D2]/85 hover:text-[#C7D5A5]"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  {isActive ? (
+                    <motion.span
+                      layoutId="navbar-active-line"
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      className="absolute inset-x-0 bottom-0 h-[1.5px] bg-[#C7D5A5]"
+                    />
+                  ) : (
+                    <span className="absolute inset-x-0 bottom-0 h-[1.5px] origin-left scale-x-0 bg-[#C7D5A5]/60 transition-transform duration-300 group-hover:scale-x-100" />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="hidden items-center lg:flex">
