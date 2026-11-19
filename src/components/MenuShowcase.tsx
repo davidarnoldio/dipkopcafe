@@ -27,8 +27,10 @@ export function MenuShowcase() {
 
   const visibleFeatured =
     activeCategory === "All"
-      ? FEATURED_DRINKS
-      : FEATURED_DRINKS.filter((item) => item.category === activeCategory);
+      ? FEATURED_DRINKS.filter((item) => item.showOnAll)
+      : activeCategory === "Signature"
+        ? FEATURED_DRINKS.filter((item) => item.isSignature)
+        : FEATURED_DRINKS.filter((item) => item.category === activeCategory);
 
   const visibleGroups = MENU_GROUPS.map((group) => {
     if (activeCategory === "All") return group;

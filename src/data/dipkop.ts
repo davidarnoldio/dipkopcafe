@@ -10,7 +10,9 @@ export type MenuFilterCategory =
 export interface FeaturedDrink {
   id: string;
   name: string;
-  category: "Coffee" | "Matcha" | "Signature";
+  category: Exclude<MenuFilterCategory, "All">;
+  isSignature?: boolean;
+  showOnAll?: boolean;
   subtitle: string;
   description: string;
   tastingNotes: string;
@@ -49,7 +51,9 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
   {
     id: "dipkop-kopi-susu-gula-aren",
     name: "DIPKOP (Kopi Susu Gula Aren)",
-    category: "Signature",
+    category: "Coffee",
+    isSignature: true,
+    showOnAll: true,
     subtitle: "#1 Kopi Susu Gula Aren di Depok",
     description:
       "Our signature house espresso paired with creamy milk and rich Indonesian palm sugar—balanced, smooth, and crafted to be your daily ritual.",
@@ -63,6 +67,8 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
     id: "signature-matcha-latte",
     name: "Signature Matcha Latte",
     category: "Matcha",
+    isSignature: true,
+    showOnAll: true,
     subtitle: "Ceremonial Grade Uji Matcha",
     description:
       "First-harvest ceremonial matcha whisked to order for a vibrant jade microfoam, paired with chilled milk—or explore Coconut, Strawberry, and Butterscotch variations.",
@@ -76,6 +82,7 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
     id: "manual-brew-aceh-gayo",
     name: "Manual Brew — Aceh Gayo",
     category: "Coffee",
+    showOnAll: true,
     subtitle: "Single-Origin Indonesian Pour Over",
     description:
       "Hand-brewed Aceh Gayo beans served hot or over ice, highlighting clean Indonesian highland terroir, gentle spice, and lingering sweetness.",
@@ -84,6 +91,48 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
     image: "/images/menu-coffee.jpg",
     imageAlt:
       "Single-origin Aceh Gayo pour-over coffee served in a fluted glass carafe and ceramic cup",
+  },
+  {
+    id: "iced-lychee-tea-refresher",
+    name: "Iced Lychee Tea & Yakult Refresher",
+    category: "Drinks & Tea",
+    isSignature: true,
+    subtitle: "Botanical Iced Tea & Sparkling Soda",
+    description:
+      "Chilled house-brewed black tea infused with whole sweet lychee, alongside our sparkling Strawberry, Peach, and Lychee Yakult Soda refreshers.",
+    tastingNotes: "Fragrant Lychee · Crisp Citrus · Effervescent",
+    price: "17K – 22K",
+    image: "/images/menu-drinks.jpg",
+    imageAlt:
+      "Iced Lychee Tea and sparkling Yakult soda refresher in ribbed glasses with botanical shadows",
+  },
+  {
+    id: "salt-bread-pain-suisse",
+    name: "Salt Bread & Pain Suisse",
+    category: "Pastry & Bites",
+    isSignature: true,
+    subtitle: "Freshly Baked Daily Pastry",
+    description:
+      "Warm, golden-crusted Salt Bread finished with flaky sea salt crystals, paired with laminated Chocolate & Red Velvet Pain Suisse, Croissants, and Canele.",
+    tastingNotes: "Cultured Butter · Flaky Sea Salt · Crisp Layers",
+    price: "15K",
+    image: "/images/menu-pastry.jpg",
+    imageAlt:
+      "Artisanal Salt Bread and golden laminated Pain Suisse pastry on a dark stoneware plate",
+  },
+  {
+    id: "salted-egg-chicken-rice",
+    name: "Salted Egg Chicken Rice",
+    category: "Kitchen",
+    isSignature: true,
+    subtitle: "Khas Singapore · Resep Autentik",
+    description:
+      "Crispy golden chicken tossed in house-made creamy salted egg yolk sauce with aromatic curry leaves and fresh chili—cooked from scratch, never instant premix.",
+    tastingNotes: "Creamy Salted Yolk · Curry Leaf · Savory Richness",
+    price: "45K",
+    image: "/images/menu-kitchen.jpg",
+    imageAlt:
+      "Singapore-style Salted Egg Chicken Rice with sunny-side up egg and curry leaves on a dark ceramic plate",
   },
 ];
 
@@ -280,10 +329,10 @@ export const LOCATION_INFO = {
   brandName: "DIPKOP Coffee & Matcha",
   addressLine1: "Jl. Kembang Beji No. 56",
   addressLine2: "Beji, Kota Depok, Jawa Barat",
-  neighborhoodNote: "No Pork, No Lard · Tersedia di GoFood",
+  neighborhoodNote: "No Pork, No Lard · hello@dipkop.id · Tersedia di GoFood",
   hours: [
-    { days: "Monday – Friday", time: "08:00 – 22:00 WIB (Placeholder)" },
-    { days: "Saturday – Sunday", time: "08:00 – 23:00 WIB (Placeholder)" },
+    { days: "Selasa – Minggu", time: "10:00 – 00:00 WIB (Last order 23:00)" },
+    { days: "Senin", time: "Tutup" },
   ],
   instagramHandle: "@dipkop.id",
   instagramUrl: "https://instagram.com/dipkop.id",
