@@ -336,6 +336,9 @@ export const LOCATION_INFO = {
   ],
   instagramHandle: "@dipkop.id",
   instagramUrl: "https://instagram.com/dipkop.id",
+  phoneDisplay: "+62 815-1088-8556",
+  whatsappUrl:
+    "https://api.whatsapp.com/send/?phone=628151088856&text&type=phone_number&app_absent=0",
   mapsUrl: "https://maps.google.com/?q=Jl.+Kembang+Beji+No.+56,+Depok",
   mapsEmbedUrl:
     "https://www.google.com/maps?q=Jl.+Kembang+Beji+No.+56,+Depok&output=embed",

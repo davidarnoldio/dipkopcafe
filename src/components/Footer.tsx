@@ -55,8 +55,21 @@ export function Footer() {
             <p className="text-sm text-[#B8C2B5]">
               {LOCATION_INFO.addressLine2}
             </p>
+            <p className="mt-2 text-sm text-[#C7D5A5]">
+              {LOCATION_INFO.phoneDisplay}
+            </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-5">
+              <a
+                href={LOCATION_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-[#F5F1E8] transition-colors hover:text-[#C7D5A5]"
+              >
+                <span>WhatsApp</span>
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+
               <a
                 href={LOCATION_INFO.instagramUrl}
                 target="_blank"

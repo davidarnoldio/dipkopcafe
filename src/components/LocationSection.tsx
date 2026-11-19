@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowUpRight, Clock, MapPin } from "lucide-react";
+import { ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
 import { LOCATION_INFO } from "@/data/dipkop";
 import { Reveal, HairlineRule } from "./MotionPrimitives";
 
@@ -109,10 +109,30 @@ export function LocationSection() {
                     </div>
                   </div>
                 </Reveal>
+
+                <Reveal delay={0.24}>
+                  <div className="flex items-start gap-4">
+                    <Phone className="mt-1 h-4 w-4 shrink-0 text-[#C7D5A5]" />
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                        WhatsApp &amp; Reservations
+                      </p>
+                      <a
+                        href={LOCATION_INFO.whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-flex items-center gap-1.5 font-serif text-2xl text-[#F5F1E8] transition-colors hover:text-[#C7D5A5]"
+                      >
+                        <span>{LOCATION_INFO.phoneDisplay}</span>
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                </Reveal>
               </div>
             </div>
 
-            <Reveal delay={0.24}>
+            <Reveal delay={0.28}>
               <div className="mt-10 flex flex-wrap items-center gap-4 pt-4">
                 <a
                   href={LOCATION_INFO.mapsUrl}
@@ -121,6 +141,16 @@ export function LocationSection() {
                   className="group inline-flex items-center gap-3 bg-[#E9E1D2] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#172820] transition-colors duration-300 hover:bg-[#C7D5A5]"
                 >
                   <span>Get Directions</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+
+                <a
+                  href={LOCATION_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 border border-[#E9E1D2]/30 px-6 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F1E8] transition-colors duration-300 hover:border-[#C7D5A5] hover:text-[#C7D5A5]"
+                >
+                  <span>WhatsApp Us</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
