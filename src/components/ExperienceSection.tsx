@@ -16,12 +16,12 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="relative overflow-hidden bg-[#253D30] py-24 sm:py-32 lg:py-40"
+      className="relative overflow-hidden bg-[#1E3B2F] py-24 sm:py-32 lg:py-40"
     >
-      {/* Soft warm coffee-brown ambient glow */}
+      {/* Soft warm oat-gold & sage ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 right-0 h-[440px] w-[440px] rounded-full bg-[#8C5D3B]/15 blur-[130px]"
+        className="pointer-events-none absolute top-0 right-0 h-[440px] w-[440px] rounded-full bg-[#C8B48A]/10 blur-[130px]"
       />
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
@@ -101,13 +101,13 @@ export function ExperienceSection() {
 
             {/* Sensory Strip */}
             <Reveal delay={0.22}>
-              <div className="mt-10 grid grid-cols-2 gap-6 border-t border-[#E9E1D2]/15 pt-8 sm:grid-cols-4">
+              <div className="mt-10 grid grid-cols-2 gap-6 border-t border-[#C8B48A]/25 pt-8 sm:grid-cols-4">
                 {SENSORY_NOTES.map((note) => (
                   <div key={note.label}>
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#C7D5A5]">
+                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#C8B48A]">
                       {note.label}
                     </p>
-                    <p className="mt-2 text-sm leading-snug text-[#E9E1D2]/85">
+                    <p className="mt-2 text-sm leading-snug text-[#F5F0E6]/85">
                       {note.value}
                     </p>
                   </div>

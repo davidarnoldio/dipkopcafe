@@ -148,11 +148,11 @@ export function MenuShowcase() {
                           : "lg:order-2 lg:pl-8"
                       }`}
                     >
-                      <div className="flex items-center justify-between border-b border-[#E9E1D2]/15 pb-4">
-                        <span className="text-[11px] uppercase tracking-[0.26em] text-[#C7D5A5]">
+                      <div className="flex items-center justify-between border-b border-[#C8B48A]/25 pb-4">
+                        <span className="text-[11px] uppercase tracking-[0.26em] text-[#7F8C6A]">
                           {drink.category} · 0{idx + 1}
                         </span>
-                        <span className="text-sm font-medium uppercase tracking-[0.18em] text-[#E9E1D2]">
+                        <span className="text-sm font-medium uppercase tracking-[0.18em] text-[#C8B48A]">
                           IDR {drink.price}
                         </span>
                       </div>
@@ -204,8 +204,8 @@ export function MenuShowcase() {
           <div className="mt-12 grid grid-cols-1 gap-x-14 gap-y-14 lg:grid-cols-2">
             {visibleGroups.map((group) => (
               <div key={group.id} className="flex flex-col">
-                <div className="flex items-baseline justify-between border-b border-[#E9E1D2]/20 pb-3">
-                  <h4 className="font-serif text-2xl font-normal tracking-wide text-[#C7D5A5]">
+                <div className="flex items-baseline justify-between border-b border-[#C8B48A]/30 pb-3">
+                  <h4 className="font-serif text-2xl font-normal tracking-wide text-[#C8B48A]">
                     {group.title}
                   </h4>
                   {group.hasHotCold && (

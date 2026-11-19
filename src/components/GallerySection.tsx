@@ -67,10 +67,10 @@ export function GallerySection() {
                   />
                 </div>
                 <figcaption className="mt-3 flex items-center justify-between gap-4 text-xs">
-                  <span className="font-serif text-base italic text-[#E9E1D2]/90">
+                  <span className="font-serif text-base italic text-[#F5F0E6]/90">
                     {item.caption}
                   </span>
-                  <span className="shrink-0 text-[10px] uppercase tracking-[0.22em] text-[#C7D5A5]/80">
+                  <span className="shrink-0 text-[10px] uppercase tracking-[0.22em] text-[#C8B48A]">
                     {item.issueNumber}
                   </span>
                 </figcaption>

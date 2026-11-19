@@ -10,7 +10,7 @@ export function LocationSection() {
     <section
       id="location"
       aria-labelledby="location-heading"
-      className="relative bg-[#13221B] py-24 sm:py-32 lg:py-36 border-t border-[#E9E1D2]/10"
+      className="relative bg-[#1E3B2F] py-24 sm:py-32 lg:py-36 border-t border-[#C8B48A]/20"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-stretch">

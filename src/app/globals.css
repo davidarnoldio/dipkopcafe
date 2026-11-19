@@ -2,12 +2,15 @@
 
 @theme inline {
   --color-forest: #172820;
+  --color-forest-emerald: #1e3b2f;
   --color-forest-deep: #111e18;
   --color-botanical: #253d30;
+  --color-sage: #7f8c6a;
   --color-matcha: #c7d5a5;
+  --color-oat-gold: #c8b48a;
   --color-cream: #e9e1d2;
   --color-coffee: #8c5d3b;
-  --color-warm-white: #f5f1e8;
+  --color-warm-white: #f5f0e6;
   --color-sage-muted: #b8c2b5;
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
@@ -17,7 +20,7 @@
 html {
   scroll-behavior: smooth;
   background-color: #172820;
-  color: #f5f1e8;
+  color: #f5f0e6;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -28,20 +31,20 @@ html {
 
 body {
   background-color: #172820;
-  color: #f5f1e8;
+  color: #f5f0e6;
   font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
   overflow-x: clip;
 }
 
 ::selection {
-  background-color: #c7d5a5;
+  background-color: #c8b48a;
   color: #172820;
 }
 
 /* Subtle organic grain overlay utility */
 .editorial-grain {
   background-image: radial-gradient(
-    rgba(233, 225, 210, 0.04) 1px,
+    rgba(245, 240, 230, 0.045) 1px,
     transparent 0
   );
   background-size: 24px 24px;

@@ -48,7 +48,7 @@ export function BrandStory() {
                     className="object-cover scale-[1.08]"
                   />
                 </ParallaxFrame>
-                <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#C8B48A]">
                   <span>The Espresso &amp; Matcha Bar</span>
                   <span>Morning Light</span>
                 </div>

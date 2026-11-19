@@ -21,8 +21,8 @@ export function HeroSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute -top-32 -left-24 h-[460px] w-[460px] rounded-full bg-[#253D30]/55 blur-[110px]" />
-        <div className="absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full bg-[#8C5D3B]/10 blur-[130px]" />
+        <div className="absolute -top-32 -left-24 h-[460px] w-[460px] rounded-full bg-[#1E3B2F]/80 blur-[110px]" />
+        <div className="absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full bg-[#7F8C6A]/15 blur-[130px]" />
         <div className="editorial-grain absolute inset-0 opacity-60" />
       </div>
 
@@ -118,7 +118,7 @@ export function HeroSection() {
               {/* Subtle organic offset border frame */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-3 -right-3 bottom-4 left-4 border border-[#C7D5A5]/20 hidden sm:block"
+                className="pointer-events-none absolute -top-3 -right-3 bottom-4 left-4 border border-[#C8B48A]/30 hidden sm:block"
               />
 
               <div className="relative aspect-[3/4] w-full max-h-[72svh] lg:max-h-[78svh] overflow-hidden bg-[#253D30]">
