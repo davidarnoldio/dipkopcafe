@@ -12,9 +12,7 @@ import {
 import { Reveal, HairlineRule } from "./MotionPrimitives";
 
 const CATEGORIES: MenuFilterCategory[] = [
-  "All",
-  "Signature",
-  "Coffee",
+  "Signature Coffee",
   "Matcha",
   "Drinks & Tea",
   "Pastry & Bites",
@@ -23,23 +21,15 @@ const CATEGORIES: MenuFilterCategory[] = [
 
 export function MenuShowcase() {
   const [activeCategory, setActiveCategory] =
-    useState<MenuFilterCategory>("All");
+    useState<MenuFilterCategory>("Signature Coffee");
 
-  const visibleFeatured =
-    activeCategory === "All"
-      ? FEATURED_DRINKS.filter((item) => item.showOnAll)
-      : activeCategory === "Signature"
-        ? FEATURED_DRINKS.filter((item) => item.isSignature)
-        : FEATURED_DRINKS.filter((item) => item.category === activeCategory);
+  const visibleFeatured = FEATURED_DRINKS.filter(
+    (item) => item.category === activeCategory
+  );
 
-  const visibleGroups = MENU_GROUPS.map((group) => {
-    if (activeCategory === "All") return group;
-    if (activeCategory === "Signature") {
-      const sigItems = group.items.filter((i) => i.isSignature);
-      return sigItems.length > 0 ? { ...group, items: sigItems } : null;
-    }
-    return group.filterCategory === activeCategory ? group : null;
-  }).filter((g): g is NonNullable<typeof g> => g !== null);
+  const visibleGroups = MENU_GROUPS.filter(
+    (group) => group.filterCategory === activeCategory
+  );
 
   return (
     <section

@@ -1,7 +1,5 @@
 export type MenuFilterCategory =
-  | "All"
-  | "Signature"
-  | "Coffee"
+  | "Signature Coffee"
   | "Matcha"
   | "Drinks & Tea"
   | "Pastry & Bites"
@@ -10,9 +8,8 @@ export type MenuFilterCategory =
 export interface FeaturedDrink {
   id: string;
   name: string;
-  category: Exclude<MenuFilterCategory, "All">;
+  category: MenuFilterCategory;
   isSignature?: boolean;
-  showOnAll?: boolean;
   subtitle: string;
   description: string;
   tastingNotes: string;
@@ -33,7 +30,7 @@ export interface MenuItem {
 export interface MenuGroup {
   id: string;
   title: string;
-  filterCategory: Exclude<MenuFilterCategory, "All" | "Signature">;
+  filterCategory: MenuFilterCategory;
   hasHotCold?: boolean;
   items: MenuItem[];
 }
@@ -51,9 +48,8 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
   {
     id: "dipkop-kopi-susu-gula-aren",
     name: "DIPKOP (Kopi Susu Gula Aren)",
-    category: "Coffee",
+    category: "Signature Coffee",
     isSignature: true,
-    showOnAll: true,
     subtitle: "#1 Kopi Susu Gula Aren di Depok",
     description:
       "Our signature house espresso paired with creamy milk and rich Indonesian palm sugar—balanced, smooth, and crafted to be your daily ritual.",
@@ -68,7 +64,6 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
     name: "Signature Matcha Latte",
     category: "Matcha",
     isSignature: true,
-    showOnAll: true,
     subtitle: "Ceremonial Grade Uji Matcha",
     description:
       "First-harvest ceremonial matcha whisked to order for a vibrant jade microfoam, paired with chilled milk—or explore Coconut, Strawberry, and Butterscotch variations.",
@@ -81,8 +76,7 @@ export const FEATURED_DRINKS: FeaturedDrink[] = [
   {
     id: "manual-brew-aceh-gayo",
     name: "Manual Brew — Aceh Gayo",
-    category: "Coffee",
-    showOnAll: true,
+    category: "Signature Coffee",
     subtitle: "Single-Origin Indonesian Pour Over",
     description:
       "Hand-brewed Aceh Gayo beans served hot or over ice, highlighting clean Indonesian highland terroir, gentle spice, and lingering sweetness.",
@@ -140,7 +134,7 @@ export const MENU_GROUPS: MenuGroup[] = [
   {
     id: "classic-coffee",
     title: "Classic Coffee",
-    filterCategory: "Coffee",
+    filterCategory: "Signature Coffee",
     hasHotCold: true,
     items: [
       { name: "Americano", priceHot: "18K", priceCold: "20K" },
@@ -158,7 +152,7 @@ export const MENU_GROUPS: MenuGroup[] = [
   {
     id: "manual-brew",
     title: "Manual Brew",
-    filterCategory: "Coffee",
+    filterCategory: "Signature Coffee",
     hasHotCold: true,
     items: [{ name: "Aceh Gayo", priceHot: "25K", priceCold: "25K" }],
   },
@@ -177,7 +171,7 @@ export const MENU_GROUPS: MenuGroup[] = [
   {
     id: "favorit-gen-z",
     title: "Favorit Gen-Z",
-    filterCategory: "Coffee",
+    filterCategory: "Signature Coffee",
     items: [
       { name: "Peach Americano", price: "25K" },
       { name: "Pistachio Mont Blanc", price: "35K", isSignature: true },
