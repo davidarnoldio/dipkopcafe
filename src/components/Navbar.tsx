@@ -65,8 +65,8 @@ export function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
           isScrolled
-            ? "bg-[#1E3B2F]/92 backdrop-blur-md border-[#C8B48A]/30 py-3.5 shadow-[0_8px_30px_rgba(11,19,15,0.28)]"
-            : "bg-[#172820]/40 backdrop-blur-[2px] border-[#C8B48A]/25 py-4"
+            ? "bg-[#1E3B2F]/96 backdrop-blur-md border-[#C8B48A]/35 py-3.5 shadow-[0_8px_30px_rgba(17,30,24,0.18)]"
+            : "bg-[#1E3B2F] border-[#C8B48A]/30 py-4"
         }`}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 sm:px-10 lg:px-14">

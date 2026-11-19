@@ -11,7 +11,7 @@
   --color-cream: #e9e1d2;
   --color-coffee: #8c5d3b;
   --color-warm-white: #f5f0e6;
-  --color-sage-muted: #b8c2b5;
+  --color-sage-muted: #4a5d52;
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
@@ -19,8 +19,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #172820;
-  color: #f5f0e6;
+  background-color: #f5f0e6;
+  color: #1e3b2f;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -30,21 +30,21 @@ html {
 }
 
 body {
-  background-color: #172820;
-  color: #f5f0e6;
+  background-color: #f5f0e6;
+  color: #1e3b2f;
   font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
   overflow-x: clip;
 }
 
 ::selection {
-  background-color: #c8b48a;
-  color: #172820;
+  background-color: #1e3b2f;
+  color: #f5f0e6;
 }
 
 /* Subtle organic grain overlay utility */
 .editorial-grain {
   background-image: radial-gradient(
-    rgba(245, 240, 230, 0.045) 1px,
+    rgba(30, 59, 47, 0.05) 1px,
     transparent 0
   );
   background-size: 24px 24px;

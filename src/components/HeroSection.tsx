@@ -14,16 +14,16 @@ export function HeroSection() {
     <section
       id="home"
       aria-label="DIPKOP Coffee & Matcha Hero"
-      className="relative min-h-[100svh] w-full overflow-hidden bg-[#172820] pt-24 pb-12 sm:pt-28 lg:pt-24 lg:pb-10 flex flex-col justify-between"
+      className="relative min-h-[100svh] w-full overflow-hidden bg-[#F5F0E6] pt-24 pb-12 sm:pt-28 lg:pt-24 lg:pb-10 flex flex-col justify-between"
     >
-      {/* Subtle atmospheric dark botanical light & shadow layers */}
+      {/* Subtle warm botanical light & texture layers */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute -top-32 -left-24 h-[460px] w-[460px] rounded-full bg-[#1E3B2F]/80 blur-[110px]" />
+        <div className="absolute -top-24 -left-24 h-[460px] w-[460px] rounded-full bg-[#C8B48A]/20 blur-[110px]" />
         <div className="absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full bg-[#7F8C6A]/15 blur-[130px]" />
-        <div className="editorial-grain absolute inset-0 opacity-60" />
+        <div className="editorial-grain absolute inset-0 opacity-70" />
       </div>
 
       <div className="relative z-10 mx-auto my-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-14">
@@ -36,8 +36,8 @@ export function HeroSection() {
               transition={{ duration: 0.7, ease: EASE_EDITORIAL }}
               className="mb-6 flex items-center gap-3"
             >
-              <span className="h-px w-8 bg-[#C7D5A5]/70" />
-              <span className="text-[11px] uppercase tracking-[0.28em] text-[#C7D5A5]">
+              <span className="h-px w-8 bg-[#7F8C6A]" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#5B684A]">
                 Indonesian Coffee &amp; Ceremonial Matcha
               </span>
             </motion.div>
@@ -46,10 +46,10 @@ export function HeroSection() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.08, ease: EASE_EDITORIAL }}
-              className="font-serif text-[clamp(3.15rem,7.2vw,6.15rem)] font-normal leading-[0.94] tracking-[-0.02em] text-[#F5F1E8]"
+              className="font-serif text-[clamp(3.15rem,7.2vw,6.15rem)] font-normal leading-[0.94] tracking-[-0.02em] text-[#1E3B2F]"
             >
               Coffee,{" "}
-              <span className="italic text-[#C7D5A5] font-normal">Matcha</span>
+              <span className="italic text-[#7F8C6A] font-normal">Matcha</span>
               <br />
               &amp; Moments.
             </motion.h1>
@@ -58,7 +58,7 @@ export function HeroSection() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.18, ease: EASE_EDITORIAL }}
-              className="mt-7 max-w-md text-base leading-relaxed text-[#E9E1D2]/80 sm:text-[1.0625rem]"
+              className="mt-7 max-w-md text-base leading-relaxed text-[#2F443A] sm:text-[1.0625rem]"
             >
               A quiet botanical sanctuary where Indonesian single-origin beans
               meet first-harvest Uji matcha—poured slowly for unhurried
@@ -73,7 +73,7 @@ export function HeroSection() {
             >
               <a
                 href="#menu"
-                className="group inline-flex items-center gap-3 bg-[#E9E1D2] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#172820] transition-colors duration-300 hover:bg-[#C7D5A5]"
+                className="group inline-flex items-center gap-3 bg-[#1E3B2F] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F0E6] transition-colors duration-300 hover:bg-[#7F8C6A]"
               >
                 <span>Explore Menu</span>
                 <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
@@ -81,7 +81,7 @@ export function HeroSection() {
 
               <a
                 href="#story"
-                className="group inline-flex items-center gap-2 border-b border-[#E9E1D2]/30 pb-1.5 text-xs uppercase tracking-[0.22em] text-[#F5F1E8]/90 transition-colors duration-300 hover:border-[#C7D5A5] hover:text-[#C7D5A5]"
+                className="group inline-flex items-center gap-2 border-b border-[#1E3B2F]/35 pb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-[#1E3B2F] transition-colors duration-300 hover:border-[#7F8C6A] hover:text-[#5B684A]"
               >
                 <span>Our Story</span>
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -93,12 +93,12 @@ export function HeroSection() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.42, ease: EASE_EDITORIAL }}
-              className="mt-12 hidden border-t border-[#E9E1D2]/12 pt-5 sm:flex items-center gap-8 text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]"
+              className="mt-12 hidden border-t border-[#1E3B2F]/15 pt-5 sm:flex items-center gap-8 text-[11px] font-medium uppercase tracking-[0.22em] text-[#4A5D52]"
             >
               <span>Aceh Gayo &amp; West Java</span>
-              <span className="h-1 w-1 rounded-full bg-[#C7D5A5]/60" />
+              <span className="h-1 w-1 rounded-full bg-[#7F8C6A]" />
               <span>First-Harvest Uji</span>
-              <span className="h-1 w-1 rounded-full bg-[#C7D5A5]/60" />
+              <span className="h-1 w-1 rounded-full bg-[#7F8C6A]" />
               <span>Small-Batch Daily</span>
             </motion.div>
           </div>
@@ -118,10 +118,10 @@ export function HeroSection() {
               {/* Subtle organic offset border frame */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-3 -right-3 bottom-4 left-4 border border-[#C8B48A]/30 hidden sm:block"
+                className="pointer-events-none absolute -top-3 -right-3 bottom-4 left-4 border border-[#C8B48A] hidden sm:block"
               />
 
-              <div className="relative aspect-[3/4] w-full max-h-[72svh] lg:max-h-[78svh] overflow-hidden bg-[#253D30]">
+              <div className="relative aspect-[3/4] w-full max-h-[72svh] lg:max-h-[78svh] overflow-hidden bg-[#1E3B2F]">
                 <Image
                   src="/images/hero-beverage.jpg"
                   alt="DIPKOP signature iced ceremonial matcha oat latte and Indonesian iced espresso latte in dappled botanical light"
@@ -133,20 +133,20 @@ export function HeroSection() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#172820]/70 via-transparent to-transparent"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#172820]/80 via-transparent to-transparent"
                 />
 
                 {/* Editorial caption overlay */}
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[#F5F1E8]">
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[#F5F0E6]">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#C7D5A5]">
+                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#C8B48A]">
                       Featured Pairings
                     </p>
-                    <p className="mt-1 font-serif text-lg italic text-[#E9E1D2]">
+                    <p className="mt-1 font-serif text-lg italic text-[#F5F0E6]">
                       Uji Matcha Oat &amp; House Espresso
                     </p>
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#E9E1D2]/70">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#F5F0E6]/80">
                     01 / 26
                   </span>
                 </div>
@@ -165,9 +165,9 @@ export function HeroSection() {
       >
         <a
           href="#story"
-          className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-[#B8C2B5] transition-colors hover:text-[#C7D5A5]"
+          className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.26em] text-[#4A5D52] transition-colors hover:text-[#1E3B2F]"
         >
-          <span className="relative flex h-6 w-px overflow-hidden bg-[#E9E1D2]/25">
+          <span className="relative flex h-6 w-px overflow-hidden bg-[#1E3B2F]/25">
             <motion.span
               animate={
                 prefersReduced ? undefined : { y: ["-100%", "100%"] }
@@ -177,14 +177,14 @@ export function HeroSection() {
                 duration: 2.2,
                 ease: "easeInOut",
               }}
-              className="h-3 w-full bg-[#C7D5A5]"
+              className="h-3 w-full bg-[#1E3B2F]"
             />
           </span>
           <span>Scroll to explore</span>
         </a>
 
-        <span className="text-[11px] uppercase tracking-[0.26em] text-[#B8C2B5]/70">
-          Est. Indonesia
+        <span className="text-[11px] font-medium uppercase tracking-[0.26em] text-[#4A5D52]">
+          Est. Depok, Indonesia
         </span>
       </motion.div>
     </section>

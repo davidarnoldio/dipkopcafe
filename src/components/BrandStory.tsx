@@ -8,17 +8,20 @@ const STORY_PILLARS = [
   {
     label: "01 · Origin",
     title: "Indonesian Terroir",
-    detail: "Direct relationships with growers across Aceh Gayo, West Java, and Flores.",
+    detail:
+      "Direct relationships with growers across Aceh Gayo, West Java, and Flores.",
   },
   {
     label: "02 · Matcha",
     title: "First-Harvest Uji",
-    detail: "Stone-milled shade-grown leaves whisked to order in small stoneware bowls.",
+    detail:
+      "Stone-milled shade-grown leaves whisked to order in small stoneware bowls.",
   },
   {
     label: "03 · Space",
     title: "Botanical Calm",
-    detail: "Warm teak, textured plaster, and living foliage shaped for unhurried hours.",
+    detail:
+      "Warm teak, textured plaster, and living foliage shaped for unhurried hours.",
   },
 ];
 
@@ -27,7 +30,7 @@ export function BrandStory() {
     <section
       id="story"
       aria-labelledby="story-heading"
-      className="relative bg-[#172820] py-24 sm:py-32 lg:py-40"
+      className="relative bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-24 sm:py-32 lg:py-40"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
@@ -37,7 +40,7 @@ export function BrandStory() {
               <div className="relative">
                 <ParallaxFrame
                   offset={24}
-                  className="aspect-[4/3] sm:aspect-[16/11] w-full bg-[#253D30]"
+                  className="aspect-[4/3] sm:aspect-[16/11] w-full bg-[#1E3B2F]"
                 >
                   <Image
                     src="/images/brand-story.jpg"
@@ -48,7 +51,7 @@ export function BrandStory() {
                     className="object-cover scale-[1.08]"
                   />
                 </ParallaxFrame>
-                <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#C8B48A]">
+                <div className="mt-4 flex items-center justify-between text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                   <span>The Espresso &amp; Matcha Bar</span>
                   <span>Morning Light</span>
                 </div>
@@ -59,21 +62,21 @@ export function BrandStory() {
           {/* Editorial Storytelling Copy */}
           <div className="lg:col-span-5 lg:pt-6">
             <Reveal delay={0.1}>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-[#C7D5A5]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#5B684A]">
                 Our Story
               </p>
               <h2
                 id="story-heading"
-                className="mt-4 font-serif text-4xl font-normal leading-[1.06] tracking-[-0.01em] text-[#F5F1E8] sm:text-5xl lg:text-[3.4rem]"
+                className="mt-4 font-serif text-4xl font-normal leading-[1.06] tracking-[-0.01em] text-[#1E3B2F] sm:text-5xl lg:text-[3.4rem]"
               >
                 Slow mornings,
                 <br />
-                <span className="italic text-[#E9E1D2]">rooted in ritual.</span>
+                <span className="italic text-[#7F8C6A]">rooted in ritual.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.18}>
-              <div className="mt-7 space-y-5 text-[15px] leading-[1.75] text-[#E9E1D2]/80 sm:text-base">
+              <div className="mt-7 space-y-5 text-[15px] leading-[1.75] text-[#2F443A] sm:text-base">
                 <p>
                   DIPKOP began with a simple idea: a neighborhood coffee house
                   doesn’t have to rush. Born in Indonesia, we pair the depth of
@@ -91,18 +94,18 @@ export function BrandStory() {
 
             <div className="mt-10">
               <HairlineRule />
-              <div className="divide-y divide-[#E9E1D2]/12">
+              <div className="divide-y divide-[#1E3B2F]/12">
                 {STORY_PILLARS.map((pillar, index) => (
                   <Reveal key={pillar.label} delay={0.1 + index * 0.08} y={14}>
                     <div className="py-5 grid grid-cols-1 gap-1 sm:grid-cols-12 sm:gap-4 items-baseline">
-                      <span className="sm:col-span-4 text-[11px] uppercase tracking-[0.2em] text-[#C7D5A5]">
+                      <span className="sm:col-span-4 text-[11px] font-medium uppercase tracking-[0.2em] text-[#8C5D3B]">
                         {pillar.label}
                       </span>
                       <div className="sm:col-span-8">
-                        <h3 className="font-serif text-xl text-[#F5F1E8]">
+                        <h3 className="font-serif text-xl font-medium text-[#1E3B2F]">
                           {pillar.title}
                         </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-[#B8C2B5]">
+                        <p className="mt-1 text-sm leading-relaxed text-[#4A5D52]">
                           {pillar.detail}
                         </p>
                       </div>

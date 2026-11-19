@@ -45,21 +45,21 @@ export function MenuShowcase() {
     <section
       id="menu"
       aria-labelledby="menu-heading"
-      className="relative bg-[#13221B] py-24 sm:py-32 lg:py-40 border-t border-[#E9E1D2]/10"
+      className="relative bg-[#F5F0E6] py-24 sm:py-32 lg:py-40 border-t border-[#1E3B2F]/12"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         {/* Editorial Header & Category Filter */}
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-[0.28em] text-[#C7D5A5]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#5B684A]">
               The House Menu
             </p>
             <h2
               id="menu-heading"
-              className="mt-4 font-serif text-4xl font-normal leading-[1.02] text-[#F5F1E8] sm:text-5xl lg:text-[3.75rem]"
+              className="mt-4 font-serif text-4xl font-normal leading-[1.02] text-[#1E3B2F] sm:text-5xl lg:text-[3.75rem]"
             >
               Crafted in{" "}
-              <span className="italic text-[#C7D5A5]">small batches.</span>
+              <span className="italic text-[#7F8C6A]">small batches.</span>
             </h2>
           </Reveal>
 
@@ -67,7 +67,7 @@ export function MenuShowcase() {
             <div
               role="tablist"
               aria-label="Menu Categories"
-              className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#E9E1D2]/15 pb-3"
+              className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#1E3B2F]/15 pb-3"
             >
               {CATEGORIES.map((category) => {
                 const isActive = activeCategory === category;
@@ -78,17 +78,17 @@ export function MenuShowcase() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActiveCategory(category)}
-                    className={`relative px-1 py-1 text-xs uppercase tracking-[0.2em] transition-colors duration-300 ${
+                    className={`relative px-1 py-1 text-xs font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${
                       isActive
-                        ? "text-[#C7D5A5]"
-                        : "text-[#B8C2B5] hover:text-[#F5F1E8]"
+                        ? "text-[#1E3B2F]"
+                        : "text-[#5B684A] hover:text-[#1E3B2F]"
                     }`}
                   >
                     {category}
                     {isActive && (
                       <motion.span
                         layoutId="menu-tab-underline"
-                        className="absolute inset-x-0 -bottom-3 h-px bg-[#C7D5A5]"
+                        className="absolute inset-x-0 -bottom-3 h-[2px] bg-[#1E3B2F]"
                         transition={{
                           duration: 0.35,
                           ease: [0.22, 1, 0.36, 1],
@@ -124,7 +124,7 @@ export function MenuShowcase() {
                         isReversed ? "lg:order-2" : "lg:order-1"
                       }`}
                     >
-                      <div className="group relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/4.3] w-full overflow-hidden bg-[#253D30]">
+                      <div className="group relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/4.3] w-full overflow-hidden bg-[#1E3B2F]">
                         <Image
                           src={drink.image}
                           alt={drink.imageAlt}
@@ -135,7 +135,7 @@ export function MenuShowcase() {
                         />
                         <div
                           aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#13221B]/50 via-transparent to-transparent"
+                          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#172820]/35 via-transparent to-transparent"
                         />
                       </div>
                     </div>
@@ -148,28 +148,28 @@ export function MenuShowcase() {
                           : "lg:order-2 lg:pl-8"
                       }`}
                     >
-                      <div className="flex items-center justify-between border-b border-[#C8B48A]/25 pb-4">
-                        <span className="text-[11px] uppercase tracking-[0.26em] text-[#7F8C6A]">
+                      <div className="flex items-center justify-between border-b border-[#1E3B2F]/18 pb-4">
+                        <span className="text-[11px] font-medium uppercase tracking-[0.26em] text-[#5B684A]">
                           {drink.category} · 0{idx + 1}
                         </span>
-                        <span className="text-sm font-medium uppercase tracking-[0.18em] text-[#C8B48A]">
+                        <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8C5D3B]">
                           IDR {drink.price}
                         </span>
                       </div>
 
-                      <h3 className="mt-6 font-serif text-3xl font-normal leading-tight text-[#F5F1E8] sm:text-4xl lg:text-[3rem]">
+                      <h3 className="mt-6 font-serif text-3xl font-normal leading-tight text-[#1E3B2F] sm:text-4xl lg:text-[3rem]">
                         {drink.name}
                       </h3>
-                      <p className="mt-2 font-serif text-lg italic text-[#C7D5A5]/90">
+                      <p className="mt-2 font-serif text-lg italic text-[#5B684A]">
                         {drink.subtitle}
                       </p>
 
-                      <p className="mt-6 max-w-lg text-[15px] leading-[1.75] text-[#E9E1D2]/80">
+                      <p className="mt-6 max-w-lg text-[15px] leading-[1.75] text-[#2F443A]">
                         {drink.description}
                       </p>
 
-                      <div className="mt-8 pt-5 border-t border-[#E9E1D2]/10 flex flex-wrap items-center justify-between gap-4">
-                        <span className="text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                      <div className="mt-8 pt-5 border-t border-[#1E3B2F]/12 flex flex-wrap items-center justify-between gap-4">
+                        <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#4A5D52]">
                           Notes: {drink.tastingNotes}
                         </span>
                       </div>
@@ -186,14 +186,14 @@ export function MenuShowcase() {
           <Reveal>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.26em] text-[#C7D5A5]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.26em] text-[#5B684A]">
                   Full Bar &amp; Kitchen Selection
                 </p>
-                <h3 className="mt-2 font-serif text-3xl text-[#F5F1E8]">
+                <h3 className="mt-2 font-serif text-3xl text-[#1E3B2F]">
                   Complete DIPKOP Menu
                 </h3>
               </div>
-              <p className="text-xs uppercase tracking-[0.18em] text-[#B8C2B5]">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#4A5D52]">
                 No Pork · No Lard · Prices in IDR (K)
               </p>
             </div>
@@ -204,19 +204,19 @@ export function MenuShowcase() {
           <div className="mt-12 grid grid-cols-1 gap-x-14 gap-y-14 lg:grid-cols-2">
             {visibleGroups.map((group) => (
               <div key={group.id} className="flex flex-col">
-                <div className="flex items-baseline justify-between border-b border-[#C8B48A]/30 pb-3">
-                  <h4 className="font-serif text-2xl font-normal tracking-wide text-[#C8B48A]">
+                <div className="flex items-baseline justify-between border-b border-[#1E3B2F]/25 pb-3">
+                  <h4 className="font-serif text-2xl font-medium tracking-wide text-[#1E3B2F]">
                     {group.title}
                   </h4>
                   {group.hasHotCold && (
-                    <div className="flex items-center gap-5 text-[10px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                    <div className="flex items-center gap-5 text-[10px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                       <span className="w-9 text-right">Hot</span>
                       <span className="w-9 text-right">Cold</span>
                     </div>
                   )}
                 </div>
 
-                <ul className="divide-y divide-[#E9E1D2]/10">
+                <ul className="divide-y divide-[#1E3B2F]/10">
                   {group.items.map((item) => (
                     <li
                       key={item.name}
@@ -224,25 +224,25 @@ export function MenuShowcase() {
                     >
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-2.5">
-                          <span className="text-[15px] text-[#F5F1E8] transition-colors group-hover:text-[#C7D5A5]">
+                          <span className="text-[15px] font-medium text-[#1E3B2F] transition-colors group-hover:text-[#8C5D3B]">
                             {item.name}
                           </span>
                           {item.isSignature && (
-                            <span className="border border-[#C7D5A5]/45 px-1.5 py-0.5 text-[9px] uppercase tracking-[0.2em] text-[#C7D5A5]">
+                            <span className="border border-[#1E3B2F]/35 bg-[#1E3B2F] px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-[#F5F0E6]">
                               Signature
                             </span>
                           )}
                         </div>
                         {item.detail && (
-                          <p className="mt-0.5 text-xs text-[#B8C2B5]/85">
+                          <p className="mt-0.5 text-xs text-[#4A5D52]">
                             {item.detail}
                           </p>
                         )}
                       </div>
 
                       {group.hasHotCold ? (
-                        <div className="flex shrink-0 items-center gap-5 text-sm font-medium text-[#E9E1D2]/90 tabular-nums">
-                          <span className="w-9 text-right text-[#B8C2B5]">
+                        <div className="flex shrink-0 items-center gap-5 text-sm font-semibold text-[#1E3B2F] tabular-nums">
+                          <span className="w-9 text-right text-[#5B684A]">
                             {item.priceHot ?? "—"}
                           </span>
                           <span className="w-9 text-right">
@@ -250,7 +250,7 @@ export function MenuShowcase() {
                           </span>
                         </div>
                       ) : (
-                        <span className="shrink-0 text-sm font-medium text-[#E9E1D2]/90 tabular-nums">
+                        <span className="shrink-0 text-sm font-semibold text-[#1E3B2F] tabular-nums">
                           {item.price}
                         </span>
                       )}
@@ -262,15 +262,17 @@ export function MenuShowcase() {
           </div>
 
           {/* Add-ons Strip */}
-          <div className="mt-14 border-t border-[#E9E1D2]/15 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs">
-            <span className="uppercase tracking-[0.24em] text-[#C7D5A5]">
+          <div className="mt-14 border-t border-[#1E3B2F]/18 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs">
+            <span className="font-semibold uppercase tracking-[0.24em] text-[#1E3B2F]">
               Add-Ons
             </span>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[#E9E1D2]/85">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[#2F443A]">
               {MENU_ADDONS.map((addon) => (
                 <span key={addon.name}>
                   {addon.name}{" "}
-                  <span className="text-[#C7D5A5]">({addon.price})</span>
+                  <span className="font-semibold text-[#8C5D3B]">
+                    ({addon.price})
+                  </span>
                 </span>
               ))}
             </div>

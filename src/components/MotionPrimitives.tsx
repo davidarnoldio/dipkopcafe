@@ -89,7 +89,7 @@ export function HairlineRule({ className = "" }: { className?: string }) {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.9, ease: EASE_EDITORIAL }}
       style={{ transformOrigin: "left center" }}
-      className={`h-px w-full bg-[#E9E1D2]/15 ${className}`}
+      className={`h-px w-full bg-[#1E3B2F]/18 ${className}`}
     />
   );
 }

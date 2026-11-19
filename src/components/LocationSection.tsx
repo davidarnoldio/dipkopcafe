@@ -10,7 +10,7 @@ export function LocationSection() {
     <section
       id="location"
       aria-labelledby="location-heading"
-      className="relative bg-[#1E3B2F] py-24 sm:py-32 lg:py-36 border-t border-[#C8B48A]/20"
+      className="relative bg-[#F5F0E6] py-24 sm:py-32 lg:py-36 border-t border-[#1E3B2F]/12"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-stretch">
@@ -18,15 +18,17 @@ export function LocationSection() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <Reveal>
-                <p className="text-[11px] uppercase tracking-[0.28em] text-[#C7D5A5]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#5B684A]">
                   Visit DIPKOP
                 </p>
                 <h2
                   id="location-heading"
-                  className="mt-4 font-serif text-4xl font-normal leading-[1.06] text-[#F5F1E8] sm:text-5xl"
+                  className="mt-4 font-serif text-4xl font-normal leading-[1.06] text-[#1E3B2F] sm:text-5xl"
                 >
                   Find your table{" "}
-                  <span className="italic text-[#C7D5A5]">under the leaves.</span>
+                  <span className="italic text-[#7F8C6A]">
+                    under the leaves.
+                  </span>
                 </h2>
               </Reveal>
 
@@ -35,18 +37,18 @@ export function LocationSection() {
 
                 <Reveal delay={0.08}>
                   <div className="flex items-start gap-4">
-                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#C7D5A5]" />
+                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#8C5D3B]" />
                     <div>
-                      <p className="text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                         Address
                       </p>
-                      <p className="mt-1.5 font-serif text-2xl text-[#F5F1E8]">
+                      <p className="mt-1.5 font-serif text-2xl text-[#1E3B2F]">
                         {LOCATION_INFO.addressLine1}
                       </p>
-                      <p className="text-sm text-[#E9E1D2]/80">
+                      <p className="text-sm text-[#2F443A]">
                         {LOCATION_INFO.addressLine2}
                       </p>
-                      <p className="mt-1 text-xs italic text-[#B8C2B5]/80">
+                      <p className="mt-1 text-xs italic text-[#4A5D52]">
                         {LOCATION_INFO.neighborhoodNote}
                       </p>
                     </div>
@@ -55,9 +57,9 @@ export function LocationSection() {
 
                 <Reveal delay={0.14}>
                   <div className="flex items-start gap-4">
-                    <Clock className="mt-1 h-4 w-4 shrink-0 text-[#C7D5A5]" />
+                    <Clock className="mt-1 h-4 w-4 shrink-0 text-[#8C5D3B]" />
                     <div>
-                      <p className="text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                         Opening Hours
                       </p>
                       <dl className="mt-2 space-y-1.5 text-sm">
@@ -66,10 +68,10 @@ export function LocationSection() {
                             key={row.days}
                             className="flex flex-wrap gap-x-6 gap-y-0.5"
                           >
-                            <dt className="text-[#E9E1D2]/90 min-w-[140px]">
+                            <dt className="font-medium text-[#1E3B2F] min-w-[140px]">
                               {row.days}
                             </dt>
-                            <dd className="text-[#C7D5A5]">{row.time}</dd>
+                            <dd className="text-[#4A5D52]">{row.time}</dd>
                           </div>
                         ))}
                       </dl>
@@ -87,21 +89,21 @@ export function LocationSection() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden="true"
-                      className="mt-1 h-4 w-4 shrink-0 text-[#C7D5A5]"
+                      className="mt-1 h-4 w-4 shrink-0 text-[#8C5D3B]"
                     >
                       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                     </svg>
                     <div>
-                      <p className="text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                         Journal &amp; Updates
                       </p>
                       <a
                         href={LOCATION_INFO.instagramUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 inline-flex items-center gap-1.5 font-serif text-2xl text-[#F5F1E8] transition-colors hover:text-[#C7D5A5]"
+                        className="mt-1 inline-flex items-center gap-1.5 font-serif text-2xl text-[#1E3B2F] transition-colors hover:text-[#8C5D3B]"
                       >
                         <span>{LOCATION_INFO.instagramHandle}</span>
                         <ArrowUpRight className="h-4 w-4" />
@@ -112,16 +114,16 @@ export function LocationSection() {
 
                 <Reveal delay={0.24}>
                   <div className="flex items-start gap-4">
-                    <Phone className="mt-1 h-4 w-4 shrink-0 text-[#C7D5A5]" />
+                    <Phone className="mt-1 h-4 w-4 shrink-0 text-[#8C5D3B]" />
                     <div>
-                      <p className="text-[11px] uppercase tracking-[0.22em] text-[#B8C2B5]">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                         WhatsApp &amp; Reservations
                       </p>
                       <a
                         href={LOCATION_INFO.whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-1 inline-flex items-center gap-1.5 font-serif text-2xl text-[#F5F1E8] transition-colors hover:text-[#C7D5A5]"
+                        className="mt-1 inline-flex items-center gap-1.5 font-serif text-2xl text-[#1E3B2F] transition-colors hover:text-[#8C5D3B]"
                       >
                         <span>{LOCATION_INFO.phoneDisplay}</span>
                         <ArrowUpRight className="h-4 w-4" />
@@ -138,7 +140,7 @@ export function LocationSection() {
                   href={LOCATION_INFO.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-[#E9E1D2] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#172820] transition-colors duration-300 hover:bg-[#C7D5A5]"
+                  className="group inline-flex items-center gap-3 bg-[#1E3B2F] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F0E6] transition-colors duration-300 hover:bg-[#7F8C6A]"
                 >
                   <span>Get Directions</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -148,7 +150,7 @@ export function LocationSection() {
                   href={LOCATION_INFO.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 border border-[#E9E1D2]/30 px-6 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F1E8] transition-colors duration-300 hover:border-[#C7D5A5] hover:text-[#C7D5A5]"
+                  className="group inline-flex items-center gap-3 border border-[#1E3B2F]/35 px-6 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#1E3B2F] transition-colors duration-300 hover:border-[#1E3B2F] hover:bg-[#1E3B2F] hover:text-[#F5F0E6]"
                 >
                   <span>WhatsApp Us</span>
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -160,16 +162,16 @@ export function LocationSection() {
           {/* Right Google Maps Embed */}
           <div className="lg:col-span-7">
             <Reveal delay={0.12} className="h-full">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-full min-h-[420px] w-full overflow-hidden border border-[#E9E1D2]/15 bg-[#253D30]">
+              <div className="relative h-[380px] sm:h-[460px] lg:h-full min-h-[420px] w-full overflow-hidden border border-[#1E3B2F]/20 bg-[#E9E1D2]">
                 <iframe
                   title="DIPKOP Coffee & Matcha Location Map"
                   src={LOCATION_INFO.mapsEmbedUrl}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full w-full border-0 grayscale contrast-110 invert-[0.9] hue-rotate-180 opacity-85 transition-opacity duration-500 hover:opacity-100"
+                  className="h-full w-full border-0 contrast-105 opacity-95 transition-opacity duration-500 hover:opacity-100"
                 />
-                <div className="pointer-events-none absolute bottom-4 left-4 bg-[#172820]/90 px-4 py-2 backdrop-blur-sm border border-[#E9E1D2]/15">
-                  <p className="text-[10px] uppercase tracking-[0.24em] text-[#C7D5A5]">
+                <div className="pointer-events-none absolute bottom-4 left-4 bg-[#1E3B2F]/92 px-4 py-2 backdrop-blur-sm border border-[#C8B48A]/35">
+                  <p className="text-[10px] uppercase tracking-[0.24em] text-[#F5F0E6]">
                     Jl. Kembang Beji No. 56 · Depok
                   </p>
                 </div>

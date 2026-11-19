@@ -16,12 +16,12 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="relative overflow-hidden bg-[#1E3B2F] py-24 sm:py-32 lg:py-40"
+      className="relative overflow-hidden bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-24 sm:py-32 lg:py-40"
     >
       {/* Soft warm oat-gold & sage ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 right-0 h-[440px] w-[440px] rounded-full bg-[#C8B48A]/10 blur-[130px]"
+        className="pointer-events-none absolute top-0 right-0 h-[440px] w-[440px] rounded-full bg-[#C8B48A]/20 blur-[130px]"
       />
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
@@ -29,15 +29,15 @@ export function ExperienceSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <Reveal>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-[#C7D5A5]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#5B684A]">
                 The Atmosphere
               </p>
               <h2
                 id="experience-heading"
-                className="mt-4 font-serif text-4xl font-normal leading-[1.05] text-[#F5F1E8] sm:text-5xl lg:text-[3.75rem]"
+                className="mt-4 font-serif text-4xl font-normal leading-[1.05] text-[#1E3B2F] sm:text-5xl lg:text-[3.75rem]"
               >
                 Designed for quiet{" "}
-                <span className="italic text-[#E9E1D2]">presence</span>,
+                <span className="italic text-[#7F8C6A]">presence</span>,
                 <br className="hidden sm:block" /> not background noise.
               </h2>
             </Reveal>
@@ -45,7 +45,7 @@ export function ExperienceSection() {
 
           <div className="lg:col-span-4">
             <Reveal delay={0.12}>
-              <p className="text-[15px] leading-[1.75] text-[#E9E1D2]/80">
+              <p className="text-[15px] leading-[1.75] text-[#2F443A]">
                 Every corner of DIPKOP is composed around natural shadow, warm
                 timber, and the gentle rhythm of hand-brewed coffee and whisked
                 tea.
@@ -60,7 +60,7 @@ export function ExperienceSection() {
             <Reveal delay={0.08}>
               <ParallaxFrame
                 offset={20}
-                className="aspect-[4/5] w-full bg-[#172820]"
+                className="aspect-[4/5] w-full bg-[#1E3B2F]"
               >
                 <Image
                   src="/images/experience-craft.jpg"
@@ -71,7 +71,7 @@ export function ExperienceSection() {
                   className="object-cover scale-[1.08]"
                 />
               </ParallaxFrame>
-              <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#C7D5A5]/85">
+              <div className="mt-4 flex items-center justify-between text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                 <span>Hand-Poured Precision</span>
                 <span>01</span>
               </div>
@@ -82,7 +82,7 @@ export function ExperienceSection() {
             <Reveal delay={0.16}>
               <ParallaxFrame
                 offset={28}
-                className="aspect-[16/11] w-full bg-[#172820]"
+                className="aspect-[16/11] w-full bg-[#1E3B2F]"
               >
                 <Image
                   src="/images/experience-space.jpg"
@@ -93,7 +93,7 @@ export function ExperienceSection() {
                   className="object-cover scale-[1.08]"
                 />
               </ParallaxFrame>
-              <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[#C7D5A5]/85">
+              <div className="mt-4 flex items-center justify-between text-[11px] font-medium uppercase tracking-[0.22em] text-[#5B684A]">
                 <span>The Botanical Corner</span>
                 <span>02</span>
               </div>
@@ -101,13 +101,13 @@ export function ExperienceSection() {
 
             {/* Sensory Strip */}
             <Reveal delay={0.22}>
-              <div className="mt-10 grid grid-cols-2 gap-6 border-t border-[#C8B48A]/25 pt-8 sm:grid-cols-4">
+              <div className="mt-10 grid grid-cols-2 gap-6 border-t border-[#1E3B2F]/18 pt-8 sm:grid-cols-4">
                 {SENSORY_NOTES.map((note) => (
                   <div key={note.label}>
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-[#C8B48A]">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-[#8C5D3B]">
                       {note.label}
                     </p>
-                    <p className="mt-2 text-sm leading-snug text-[#F5F0E6]/85">
+                    <p className="mt-2 text-sm leading-snug text-[#1E3B2F]">
                       {note.value}
                     </p>
                   </div>
