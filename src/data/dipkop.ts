@@ -1,23 +1,39 @@
-export type MenuCategory = "Coffee" | "Matcha" | "Signature";
+export type MenuFilterCategory =
+  | "All"
+  | "Signature"
+  | "Coffee"
+  | "Matcha"
+  | "Drinks & Tea"
+  | "Pastry & Bites"
+  | "Kitchen";
 
 export interface FeaturedDrink {
   id: string;
   name: string;
-  category: MenuCategory;
+  category: "Coffee" | "Matcha" | "Signature";
   subtitle: string;
   description: string;
   tastingNotes: string;
-  pricePlaceholder: string;
+  price: string;
   image: string;
   imageAlt: string;
 }
 
-export interface LedgerDrink {
-  id: string;
+export interface MenuItem {
   name: string;
-  category: MenuCategory;
-  description: string;
-  pricePlaceholder: string;
+  detail?: string;
+  priceHot?: string;
+  priceCold?: string;
+  price?: string;
+  isSignature?: boolean;
+}
+
+export interface MenuGroup {
+  id: string;
+  title: string;
+  filterCategory: Exclude<MenuFilterCategory, "All" | "Signature">;
+  hasHotCold?: boolean;
+  items: MenuItem[];
 }
 
 export interface GalleryItem {
@@ -31,111 +47,190 @@ export interface GalleryItem {
 
 export const FEATURED_DRINKS: FeaturedDrink[] = [
   {
-    id: "dipkop-dirty-matcha",
-    name: "Dipkop Dirty Matcha",
+    id: "dipkop-kopi-susu-gula-aren",
+    name: "DIPKOP (Kopi Susu Gula Aren)",
     category: "Signature",
-    subtitle: "Layered Espresso & First-Harvest Uji",
+    subtitle: "#1 Kopi Susu Gula Aren di Depok",
     description:
-      "Velvety ceremonial matcha whisked to order, poured over chilled oat milk and crowned with a double ristretto of our house Indonesian espresso.",
-    tastingNotes: "Umami · Roasted Cacao · Oat Cream",
-    pricePlaceholder: "IDR 48K (Sample)",
+      "Our signature house espresso paired with creamy milk and rich Indonesian palm sugar—balanced, smooth, and crafted to be your daily ritual.",
+    tastingNotes: "Caramelized Palm Sugar · Roasted Espresso · Velvety Milk",
+    price: "25K",
     image: "/images/menu-signature.jpg",
     imageAlt:
-      "Iced Dipkop Dirty Matcha with espresso cascading over oat milk and ceremonial matcha",
+      "DIPKOP signature iced Kopi Susu Gula Aren and layered house beverage",
   },
   {
-    id: "ceremonial-uji-matcha",
-    name: "Ceremonial Uji Matcha",
+    id: "signature-matcha-latte",
+    name: "Signature Matcha Latte",
     category: "Matcha",
-    subtitle: "Hand-Whisked in Stoneware",
+    subtitle: "Ceremonial Grade Uji Matcha",
     description:
-      "Stone-milled first-harvest Uji cultivar whisked with a bamboo chasen at 75°C for a naturally sweet, lingering jade microfoam.",
-    tastingNotes: "Sweet Grass · Sea Breeze · Silky Finish",
-    pricePlaceholder: "IDR 45K (Sample)",
+      "First-harvest ceremonial matcha whisked to order for a vibrant jade microfoam, paired with chilled milk—or explore Coconut, Strawberry, and Butterscotch variations.",
+    tastingNotes: "Umami · Sweet Grass · Creamy Finish",
+    price: "32K",
     image: "/images/menu-matcha.jpg",
     imageAlt:
-      "Ceremonial Uji matcha in a dark stoneware chawan bowl with a bamboo whisk",
+      "Ceremonial Uji matcha latte in a handcrafted stoneware bowl with a bamboo whisk",
   },
   {
-    id: "archipelago-pour-over",
-    name: "Archipelago Pour Over",
+    id: "manual-brew-aceh-gayo",
+    name: "Manual Brew — Aceh Gayo",
     category: "Coffee",
-    subtitle: "Single-Origin Indonesian Filter",
+    subtitle: "Single-Origin Indonesian Pour Over",
     description:
-      "Rotating micro-lots from Aceh Gayo, West Java, and Flores Bajawa—hand-brewed to highlight bright terroir and clean aromatic sweetness.",
-    tastingNotes: "Tamarind · Dark Honey · Spice",
-    pricePlaceholder: "IDR 42K (Sample)",
+      "Hand-brewed Aceh Gayo beans served hot or over ice, highlighting clean Indonesian highland terroir, gentle spice, and lingering sweetness.",
+    tastingNotes: "Highland Spice · Dark Honey · Clean Finish",
+    price: "25K (Hot / Cold)",
     image: "/images/menu-coffee.jpg",
     imageAlt:
-      "Single-origin Indonesian pour-over coffee served in a fluted glass carafe and ceramic cup",
+      "Single-origin Aceh Gayo pour-over coffee served in a fluted glass carafe and ceramic cup",
   },
 ];
 
-export const MENU_LEDGER: LedgerDrink[] = [
+export const MENU_GROUPS: MenuGroup[] = [
   {
-    id: "gula-aren-kopi",
-    name: "Kopi Susu Dipkop",
-    category: "Signature",
-    description:
-      "Double house espresso, organic Javanese palm sugar reduction, and cold-textured milk.",
-    pricePlaceholder: "IDR 38K (Sample)",
+    id: "classic-coffee",
+    title: "Classic Coffee",
+    filterCategory: "Coffee",
+    hasHotCold: true,
+    items: [
+      { name: "Americano", priceHot: "18K", priceCold: "20K" },
+      { name: "Cappuccino", priceHot: "25K", priceCold: "27K" },
+      { name: "Cafe Latte", priceHot: "24K", priceCold: "26K" },
+      { name: "Vanilla Latte", priceHot: "25K", priceCold: "27K" },
+      { name: "Affogato", priceCold: "23K" },
+      {
+        name: "DIPKOP (Kopi Susu Gula Aren)",
+        priceCold: "25K",
+        isSignature: true,
+      },
+    ],
   },
   {
-    id: "pandan-matcha-cloud",
-    name: "Pandan Matcha Cloud",
-    category: "Signature",
-    description:
-      "Iced Uji matcha layered beneath aromatic house-infused pandan cream foam.",
-    pricePlaceholder: "IDR 48K (Sample)",
+    id: "manual-brew",
+    title: "Manual Brew",
+    filterCategory: "Coffee",
+    hasHotCold: true,
+    items: [{ name: "Aceh Gayo", priceHot: "25K", priceCold: "25K" }],
   },
   {
-    id: "espresso-botanical-tonic",
-    name: "Botanical Espresso Tonic",
-    category: "Signature",
-    description:
-      "Bright washed-process espresso over dry quinine tonic, kaffir lime leaf, and rosemary.",
-    pricePlaceholder: "IDR 44K (Sample)",
+    id: "ceremonial-matcha",
+    title: "Ceremonial Matcha",
+    filterCategory: "Matcha",
+    items: [
+      { name: "Regular Matcha Latte", price: "29K" },
+      { name: "Signature Matcha Latte", price: "32K", isSignature: true },
+      { name: "Coconut Matcha", price: "35K" },
+      { name: "Strawberry Matcha Latte", price: "35K", isSignature: true },
+      { name: "Butterscotch Matcha Latte", price: "32K" },
+    ],
   },
   {
-    id: "iced-matcha-oat",
-    name: "Iced Matcha Oat Latte",
-    category: "Matcha",
-    description:
-      "Pure ceremonial Uji matcha poured over chilled barista oat milk with zero refined sugar.",
-    pricePlaceholder: "IDR 44K (Sample)",
+    id: "favorit-gen-z",
+    title: "Favorit Gen-Z",
+    filterCategory: "Coffee",
+    items: [
+      { name: "Peach Americano", price: "25K" },
+      { name: "Pistachio Mont Blanc", price: "35K", isSignature: true },
+      { name: "Strawberrycano", price: "28K" },
+      { name: "Tiramisu Latte", price: "32K", isSignature: true },
+      { name: "Butterscotch Latte", price: "29K" },
+    ],
   },
   {
-    id: "hojicha-roasted-latte",
-    name: "Kyoto Hojicha Latte",
-    category: "Matcha",
-    description:
-      "Slow-roasted green tea leaves steamed with velvety milk for a warm, nutty caramel profile.",
-    pricePlaceholder: "IDR 42K (Sample)",
+    id: "refresher",
+    title: "Refresher",
+    filterCategory: "Drinks & Tea",
+    items: [
+      { name: "Strawberry Yakult Soda", price: "22K" },
+      { name: "Peach Yakult Soda", price: "22K" },
+      { name: "Lychee Yakult Soda", price: "22K" },
+    ],
   },
   {
-    id: "flat-white",
-    name: "House Flat White",
-    category: "Coffee",
-    description:
-      "18g Indonesian-blend double espresso paired with glossy microfoam in warm stoneware.",
-    pricePlaceholder: "IDR 36K (Sample)",
+    id: "iced-tea",
+    title: "Iced Tea",
+    filterCategory: "Drinks & Tea",
+    items: [
+      { name: "Iced Black Tea", price: "15K" },
+      { name: "Iced Peach Tea", price: "17K" },
+      { name: "Iced Lychee Tea", price: "17K", isSignature: true },
+    ],
   },
   {
-    id: "cold-brew-reserve",
-    name: "18-Hour Cold Brew Reserve",
-    category: "Coffee",
-    description:
-      "Slow-steeped West Java beans served over a hand-cut crystal ice sphere.",
-    pricePlaceholder: "IDR 40K (Sample)",
+    id: "pastry",
+    title: "Pastry",
+    filterCategory: "Pastry & Bites",
+    items: [
+      { name: "Salt Bread", price: "15K", isSignature: true },
+      { name: "Cheese Salt Bread", price: "15K" },
+      { name: "Chocolate Pain Suisse", price: "15K" },
+      { name: "Red Velvet Pain Suisse", price: "15K" },
+      { name: "Croissant", price: "15K" },
+      { name: "Canele", price: "15K" },
+    ],
   },
   {
-    id: "americano-long-black",
-    name: "Long Black",
-    category: "Coffee",
-    description:
-      "Double espresso pulled directly over 92°C filtered spring water to preserve crema.",
-    pricePlaceholder: "IDR 32K (Sample)",
+    id: "appetiser",
+    title: "Appetiser",
+    filterCategory: "Pastry & Bites",
+    items: [
+      { name: "Mixed Platter", price: "20K", isSignature: true },
+      { name: "Kentang Goreng", price: "17K" },
+      { name: "Cireng Bumbu Rujak", price: "15K" },
+      { name: "Chicken Wings khas Swedia", price: "28K", isSignature: true },
+      { name: "Tahu Cabe Garam", price: "15K" },
+    ],
   },
+  {
+    id: "main-course",
+    title: "Main Course",
+    filterCategory: "Kitchen",
+    items: [
+      {
+        name: "Salted Egg Chicken Rice khas Singapore",
+        detail: "Resep autentik ala Singapura, creamy, gurih, bukan saus premix instan",
+        price: "45K",
+        isSignature: true,
+      },
+      { name: "Black Pepper Chicken Rice", price: "38K" },
+      {
+        name: "Nasi Ayam Serundeng",
+        detail: "Sambal Matah / Bawang / Cabe Ijo",
+        price: "33K",
+        isSignature: true,
+      },
+      { name: "Nasi Goreng Spesial", price: "28K" },
+      { name: "Indomie Goreng", price: "15K" },
+      {
+        name: "Indomie Rebus",
+        detail: "Kari Ayam / Soto Mie / Ayam Bawang",
+        price: "15K",
+      },
+    ],
+  },
+  {
+    id: "dessert",
+    title: "Dessert",
+    filterCategory: "Pastry & Bites",
+    items: [
+      { name: "Pisang Bakar Coklat Keju", price: "20K" },
+      { name: "Pisang Goreng Coklat Keju", price: "20K" },
+      { name: "Burnt Cheesecake", price: "30K", isSignature: true },
+      {
+        name: "Callebaut Cookie Bomb",
+        detail: "with Ice Cream",
+        price: "45K",
+        isSignature: true,
+      },
+    ],
+  },
+];
+
+export const MENU_ADDONS = [
+  { name: "Oatside", price: "+5K" },
+  { name: "Extra Shot", price: "+6K" },
+  { name: "Ice Cream", price: "+5K" },
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
@@ -183,16 +278,16 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 
 export const LOCATION_INFO = {
   brandName: "DIPKOP Coffee & Matcha",
-  addressLine1: "Jl. Kemang Raya No. — (Editable Address)",
-  addressLine2: "Jakarta Selatan, Indonesia",
-  neighborhoodNote: "Tucked behind a quiet botanical courtyard — placeholder location",
+  addressLine1: "Jl. Kembang Beji No. 56",
+  addressLine2: "Beji, Kota Depok, Jawa Barat",
+  neighborhoodNote: "No Pork, No Lard · Tersedia di GoFood",
   hours: [
-    { days: "Monday – Friday", time: "07:30 – 21:00 WIB (Placeholder)" },
-    { days: "Saturday – Sunday", time: "08:00 – 22:00 WIB (Placeholder)" },
+    { days: "Monday – Friday", time: "08:00 – 22:00 WIB (Placeholder)" },
+    { days: "Saturday – Sunday", time: "08:00 – 23:00 WIB (Placeholder)" },
   ],
   instagramHandle: "@dipkop.id",
-  instagramUrl: "https://instagram.com",
-  mapsUrl: "https://maps.google.com/?q=Kemang+Jakarta+Selatan",
+  instagramUrl: "https://instagram.com/dipkop.id",
+  mapsUrl: "https://maps.google.com/?q=Jl.+Kembang+Beji+No.+56,+Depok",
   mapsEmbedUrl:
-    "https://www.google.com/maps?q=Kemang,+South+Jakarta&output=embed",
+    "https://www.google.com/maps?q=Jl.+Kembang+Beji+No.+56,+Depok&output=embed",
 };

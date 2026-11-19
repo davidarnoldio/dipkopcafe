@@ -140,7 +140,7 @@ export function LocationSection() {
                 />
                 <div className="pointer-events-none absolute bottom-4 left-4 bg-[#172820]/90 px-4 py-2 backdrop-blur-sm border border-[#E9E1D2]/15">
                   <p className="text-[10px] uppercase tracking-[0.24em] text-[#C7D5A5]">
-                    Map Placeholder · Jakarta Selatan
+                    Jl. Kembang Beji No. 56 · Depok
                   </p>
                 </div>
               </div>
