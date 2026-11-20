@@ -18,9 +18,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           {/* Brand Statement */}
           <div className="md:col-span-5">
-            <div className="inline-flex bg-[#1E3B2F] px-4 py-2.5 border border-[#C8B48A]/40">
-              <DipkopLogo showSubtext />
-            </div>
+            <DipkopLogo showSubtext />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#2F443A]">
               An Indonesian coffee and ceremonial matcha house built around
               botanical calm, natural textures, and unhurried daily rituals.
