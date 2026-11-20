@@ -69,11 +69,11 @@ export function Navbar() {
             : "bg-[#1E3B2F] border-[#C8B48A]/30 py-4"
         }`}
       >
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 sm:px-10 lg:px-14">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 sm:px-10 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-14">
           <a
             href="#home"
             aria-label="DIPKOP Coffee & Matcha Home"
-            className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C7D5A5]"
+            className="justify-self-start focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C7D5A5]"
           >
             <DipkopLogo />
           </a>
@@ -81,7 +81,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden items-center gap-8 lg:flex"
+            className="hidden items-center justify-center gap-7 xl:gap-9 lg:flex"
           >
             {NAV_LINKS.map((item) => {
               const isActive = activeHref === item.href;
@@ -111,12 +111,12 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden items-center lg:flex">
+          <div className="hidden items-center justify-self-end lg:flex">
             <a
               href="#location"
               className="group inline-flex items-center gap-2 border border-[#E9E1D2]/30 bg-[#172820]/40 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-[#F5F1E8] transition-all duration-300 hover:border-[#C7D5A5] hover:bg-[#C7D5A5] hover:text-[#172820] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C7D5A5]"
             >
-              <span>Visit Us</span>
+              <span>Visit DIPKOP</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
@@ -160,34 +160,44 @@ export function Navbar() {
             </div>
 
             <nav aria-label="Mobile Links" className="my-auto flex flex-col gap-5">
-              {NAV_LINKS.map((item, idx) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 * idx, duration: 0.4 }}
-                  className="font-serif text-4xl font-normal tracking-wide text-[#F5F1E8] transition-colors hover:text-[#C7D5A5]"
-                >
-                  <span className="mr-4 font-sans text-xs tracking-[0.2em] text-[#C7D5A5]/70">
-                    0{idx + 1}
-                  </span>
-                  {item.label}
-                </motion.a>
-              ))}
+              {NAV_LINKS.map((item, idx) => {
+                const isActive = activeHref === item.href;
+                return (
+                  <motion.a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => {
+                      setActiveHref(item.href);
+                      setMobileOpen(false);
+                    }}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 * idx, duration: 0.4 }}
+                    className={`font-serif text-4xl font-normal tracking-wide transition-colors ${
+                      isActive
+                        ? "text-[#C7D5A5]"
+                        : "text-[#F5F1E8] hover:text-[#C7D5A5]"
+                    }`}
+                  >
+                    <span className="mr-4 font-sans text-xs tracking-[0.2em] text-[#C7D5A5]/70">
+                      0{idx + 1}
+                    </span>
+                    {item.label}
+                  </motion.a>
+                );
+              })}
             </nav>
 
-            <div className="border-t border-[#E9E1D2]/15 pt-6 flex items-center justify-between">
-              <span className="text-xs uppercase tracking-[0.2em] text-[#B8C2B5]">
-                Indonesian Coffee &amp; Matcha
+            <div className="border-t border-[#E9E1D2]/15 pt-6 flex items-center justify-between gap-4">
+              <span className="text-xs uppercase tracking-[0.18em] text-[#B8C2B5]">
+                Jl. Kembang Beji No. 56 · Depok
               </span>
               <a
                 href="#location"
                 onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center gap-2 bg-[#C7D5A5] px-5 py-3 text-xs font-medium uppercase tracking-[0.2em] text-[#172820]"
+                className="inline-flex shrink-0 items-center gap-2 bg-[#C7D5A5] px-5 py-3 text-xs font-medium uppercase tracking-[0.2em] text-[#172820]"
               >
-                Visit Us
+                Visit DIPKOP
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>

@@ -16,7 +16,7 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="relative overflow-hidden bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-24 sm:py-32 lg:py-40"
+      className="relative overflow-hidden bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-20 sm:py-28 lg:py-32"
     >
       {/* Soft warm oat-gold & sage ambient glow */}
       <div

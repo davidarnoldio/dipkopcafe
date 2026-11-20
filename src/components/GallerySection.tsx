@@ -9,7 +9,7 @@ const SPAN_CLASSES = [
   "lg:col-span-7 aspect-[16/10]",
   "lg:col-span-5 aspect-[4/5]",
   "lg:col-span-4 aspect-[4/5]",
-  "lg:col-span-4 aspect-square lg:mt-14",
+  "lg:col-span-4 aspect-square lg:translate-y-6",
   "lg:col-span-4 aspect-[4/3]",
 ];
 
@@ -18,7 +18,7 @@ export function GallerySection() {
     <section
       id="gallery"
       aria-labelledby="gallery-heading"
-      className="relative bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-24 sm:py-32 lg:py-40"
+      className="relative bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-20 sm:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="flex flex-col justify-between gap-6 border-b border-[#1E3B2F]/15 pb-10 sm:flex-row sm:items-end">

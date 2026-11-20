@@ -30,7 +30,7 @@ export function BrandStory() {
     <section
       id="story"
       aria-labelledby="story-heading"
-      className="relative bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-24 sm:py-32 lg:py-40"
+      className="relative bg-[#F5F0E6] border-t border-[#1E3B2F]/12 py-20 sm:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">

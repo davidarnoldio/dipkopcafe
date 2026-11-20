@@ -10,7 +10,7 @@ export function LocationSection() {
     <section
       id="location"
       aria-labelledby="location-heading"
-      className="relative bg-[#F5F0E6] py-24 sm:py-32 lg:py-36 border-t border-[#1E3B2F]/12"
+      className="relative bg-[#F5F0E6] py-20 sm:py-28 lg:py-32 border-t border-[#1E3B2F]/12"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-stretch">
@@ -170,10 +170,19 @@ export function LocationSection() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-full w-full border-0 contrast-105 opacity-95 transition-opacity duration-500 hover:opacity-100"
                 />
-                <div className="pointer-events-none absolute bottom-4 left-4 bg-[#1E3B2F]/92 px-4 py-2 backdrop-blur-sm border border-[#C8B48A]/35">
-                  <p className="text-[10px] uppercase tracking-[0.24em] text-[#F5F0E6]">
+                <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 bg-[#1E3B2F]/94 px-4 py-2.5 backdrop-blur-sm border border-[#C8B48A]/35">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-[#F5F0E6]">
                     Jl. Kembang Beji No. 56 · Depok
                   </p>
+                  <a
+                    href={LOCATION_INFO.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.2em] text-[#C7D5A5] transition-colors hover:text-[#F5F0E6]"
+                  >
+                    <span>View on Google Maps</span>
+                    <ArrowUpRight className="h-3 w-3" />
+                  </a>
                 </div>
               </div>
             </Reveal>

@@ -35,7 +35,7 @@ export function MenuShowcase() {
     <section
       id="menu"
       aria-labelledby="menu-heading"
-      className="relative bg-[#F5F0E6] py-24 sm:py-32 lg:py-40 border-t border-[#1E3B2F]/12"
+      className="relative bg-[#F5F0E6] py-20 sm:py-28 lg:py-32 border-t border-[#1E3B2F]/12"
     >
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14">
         {/* Editorial Header & Category Filter */}
@@ -57,7 +57,7 @@ export function MenuShowcase() {
             <div
               role="tablist"
               aria-label="Menu Categories"
-              className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#1E3B2F]/15 pb-3"
+              className="flex flex-nowrap items-center gap-x-5 overflow-x-auto border-b border-[#1E3B2F]/15 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {CATEGORIES.map((category) => {
                 const isActive = activeCategory === category;
@@ -68,7 +68,7 @@ export function MenuShowcase() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActiveCategory(category)}
-                    className={`relative px-1 py-1 text-xs font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${
+                    className={`relative shrink-0 whitespace-nowrap px-1.5 py-2.5 text-xs font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${
                       isActive
                         ? "text-[#1E3B2F]"
                         : "text-[#5B684A] hover:text-[#1E3B2F]"
@@ -78,7 +78,7 @@ export function MenuShowcase() {
                     {isActive && (
                       <motion.span
                         layoutId="menu-tab-underline"
-                        className="absolute inset-x-0 -bottom-3 h-[2px] bg-[#1E3B2F]"
+                        className="absolute inset-x-0 bottom-0 h-[2px] bg-[#1E3B2F]"
                         transition={{
                           duration: 0.35,
                           ease: [0.22, 1, 0.36, 1],
@@ -162,6 +162,12 @@ export function MenuShowcase() {
                         <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#4A5D52]">
                           Notes: {drink.tastingNotes}
                         </span>
+                        <a
+                          href="#menu-ledger"
+                          className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1E3B2F] border-b border-[#1E3B2F]/35 pb-0.5 transition-colors hover:border-[#8C5D3B] hover:text-[#8C5D3B]"
+                        >
+                          Full {activeCategory} List ↓
+                        </a>
                       </div>
                     </div>
                   </motion.article>
@@ -172,7 +178,7 @@ export function MenuShowcase() {
         )}
 
         {/* House Menu Ledger */}
-        <div className="mt-20 lg:mt-28">
+        <div id="menu-ledger" className="mt-20 lg:mt-24 scroll-mt-24">
           <Reveal>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6">
               <div>
@@ -210,7 +216,7 @@ export function MenuShowcase() {
                   {group.items.map((item) => (
                     <li
                       key={item.name}
-                      className="group py-3.5 flex items-baseline justify-between gap-4"
+                      className="group py-3.5 px-2 -mx-2 flex items-baseline justify-between gap-4 transition-colors duration-200 hover:bg-[#1E3B2F]/[0.035]"
                     >
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-2.5">

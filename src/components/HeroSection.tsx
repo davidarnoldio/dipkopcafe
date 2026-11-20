@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, MapPin } from "lucide-react";
 
 const EASE_EDITORIAL: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -34,11 +34,15 @@ export function HeroSection() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: EASE_EDITORIAL }}
-              className="mb-6 flex items-center gap-3"
+              className="mb-5 flex flex-wrap items-center gap-3"
             >
-              <span className="h-px w-8 bg-[#7F8C6A]" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#5B684A]">
+              <span className="h-px w-7 bg-[#7F8C6A]" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.26em] text-[#5B684A]">
                 Indonesian Coffee &amp; Ceremonial Matcha
+              </span>
+              <span className="inline-flex items-center gap-1.5 border border-[#1E3B2F]/20 bg-[#E9E1D2]/55 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#1E3B2F]">
+                <MapPin className="h-3 w-3 text-[#8C5D3B]" />
+                <span>Beji, Depok</span>
               </span>
             </motion.div>
 
@@ -46,7 +50,7 @@ export function HeroSection() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.08, ease: EASE_EDITORIAL }}
-              className="font-serif text-[clamp(3.15rem,7.2vw,6.15rem)] font-normal leading-[0.94] tracking-[-0.02em] text-[#1E3B2F]"
+              className="font-serif text-[clamp(2.75rem,9vw,6.15rem)] font-normal leading-[0.95] tracking-[-0.02em] text-[#1E3B2F]"
             >
               Coffee,{" "}
               <span className="italic text-[#7F8C6A] font-normal">Matcha</span>
