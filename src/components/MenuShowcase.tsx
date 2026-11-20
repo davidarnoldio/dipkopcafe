@@ -53,7 +53,10 @@ export function MenuShowcase() {
             </h2>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal
+            delay={0.1}
+            className="sticky top-[68px] z-30 -mx-6 bg-[#F5F0E6]/95 px-6 py-2 backdrop-blur-sm sm:-mx-10 sm:px-10 lg:static lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none"
+          >
             <div
               role="tablist"
               aria-label="Menu Categories"
@@ -68,7 +71,7 @@ export function MenuShowcase() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActiveCategory(category)}
-                    className={`relative shrink-0 whitespace-nowrap px-1.5 py-2.5 text-xs font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${
+                    className={`relative shrink-0 whitespace-nowrap px-2 py-2.5 text-xs font-medium uppercase tracking-[0.2em] transition-colors duration-300 ${
                       isActive
                         ? "text-[#1E3B2F]"
                         : "text-[#5B684A] hover:text-[#1E3B2F]"
@@ -213,45 +216,60 @@ export function MenuShowcase() {
                 </div>
 
                 <ul className="divide-y divide-[#1E3B2F]/10">
-                  {group.items.map((item) => (
-                    <li
-                      key={item.name}
-                      className="group py-3.5 px-2 -mx-2 flex items-baseline justify-between gap-4 transition-colors duration-200 hover:bg-[#1E3B2F]/[0.035]"
-                    >
-                      <div className="min-w-0">
-                        <div className="flex flex-wrap items-center gap-2.5">
-                          <span className="text-[15px] font-medium text-[#1E3B2F] transition-colors group-hover:text-[#8C5D3B]">
-                            {item.name}
-                          </span>
-                          {item.isSignature && (
-                            <span className="border border-[#1E3B2F]/35 bg-[#1E3B2F] px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-[#F5F0E6]">
-                              Signature
+                  {[...group.items]
+                    .sort(
+                      (a, b) =>
+                        Number(Boolean(b.isBestSeller || b.isSignature)) -
+                        Number(Boolean(a.isBestSeller || a.isSignature))
+                    )
+                    .map((item) => (
+                      <li
+                        key={item.name}
+                        className={`group py-3.5 px-2.5 -mx-2.5 flex items-baseline justify-between gap-4 transition-colors duration-200 hover:bg-[#1E3B2F]/[0.045] ${
+                          item.isBestSeller
+                            ? "bg-[#E9E1D2]/45"
+                            : ""
+                        }`}
+                      >
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="text-[15px] font-medium text-[#1E3B2F] transition-colors group-hover:text-[#8C5D3B]">
+                              {item.name}
                             </span>
+                            {item.isBestSeller && (
+                              <span className="bg-[#8C5D3B] px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#F5F0E6]">
+                                Best Seller
+                              </span>
+                            )}
+                            {item.isSignature && (
+                              <span className="border border-[#1E3B2F]/35 bg-[#1E3B2F] px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-[#F5F0E6]">
+                                Signature
+                              </span>
+                            )}
+                          </div>
+                          {item.detail && (
+                            <p className="mt-0.5 text-xs text-[#4A5D52]">
+                              {item.detail}
+                            </p>
                           )}
                         </div>
-                        {item.detail && (
-                          <p className="mt-0.5 text-xs text-[#4A5D52]">
-                            {item.detail}
-                          </p>
-                        )}
-                      </div>
 
-                      {group.hasHotCold ? (
-                        <div className="flex shrink-0 items-center gap-5 text-sm font-semibold text-[#1E3B2F] tabular-nums">
-                          <span className="w-9 text-right text-[#5B684A]">
-                            {item.priceHot ?? "—"}
+                        {group.hasHotCold ? (
+                          <div className="flex shrink-0 items-center gap-5 text-sm font-semibold text-[#1E3B2F] tabular-nums">
+                            <span className="w-9 text-right text-[#5B684A]">
+                              {item.priceHot ?? "—"}
+                            </span>
+                            <span className="w-9 text-right">
+                              {item.priceCold ?? "—"}
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="shrink-0 text-sm font-semibold text-[#1E3B2F] tabular-nums">
+                            {item.price}
                           </span>
-                          <span className="w-9 text-right">
-                            {item.priceCold ?? "—"}
-                          </span>
-                        </div>
-                      ) : (
-                        <span className="shrink-0 text-sm font-semibold text-[#1E3B2F] tabular-nums">
-                          {item.price}
-                        </span>
-                      )}
-                    </li>
-                  ))}
+                        )}
+                      </li>
+                    ))}
                 </ul>
               </div>
             ))}

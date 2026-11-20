@@ -30,9 +30,32 @@ export function LocationSection() {
                     under the leaves.
                   </span>
                 </h2>
+
+                {/* Immediate Conversion CTA Strip */}
+                <div className="mt-7 flex flex-wrap items-center gap-3">
+                  <a
+                    href={LOCATION_INFO.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2.5 bg-[#1E3B2F] px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#F5F0E6] shadow-[0_10px_24px_rgba(30,59,47,0.16)] transition-colors duration-300 hover:bg-[#7F8C6A]"
+                  >
+                    <span>Get Directions</span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+
+                  <a
+                    href={LOCATION_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2.5 border border-[#1E3B2F]/35 bg-[#E9E1D2]/50 px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#1E3B2F] transition-colors duration-300 hover:border-[#1E3B2F] hover:bg-[#1E3B2F] hover:text-[#F5F0E6]"
+                  >
+                    <span>WhatsApp Us</span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
               </Reveal>
 
-              <div className="mt-10 space-y-7">
+              <div className="mt-9 space-y-6">
                 <HairlineRule />
 
                 <Reveal delay={0.08}>
@@ -133,30 +156,6 @@ export function LocationSection() {
                 </Reveal>
               </div>
             </div>
-
-            <Reveal delay={0.28}>
-              <div className="mt-10 flex flex-wrap items-center gap-4 pt-4">
-                <a
-                  href={LOCATION_INFO.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-[#1E3B2F] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F0E6] transition-colors duration-300 hover:bg-[#7F8C6A]"
-                >
-                  <span>Get Directions</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-
-                <a
-                  href={LOCATION_INFO.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 border border-[#1E3B2F]/35 px-6 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#1E3B2F] transition-colors duration-300 hover:border-[#1E3B2F] hover:bg-[#1E3B2F] hover:text-[#F5F0E6]"
-                >
-                  <span>WhatsApp Us</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              </div>
-            </Reveal>
           </div>
 
           {/* Right Google Maps Embed */}

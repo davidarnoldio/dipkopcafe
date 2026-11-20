@@ -25,6 +25,7 @@ export interface MenuItem {
   priceCold?: string;
   price?: string;
   isSignature?: boolean;
+  isBestSeller?: boolean;
 }
 
 export interface MenuGroup {
@@ -146,6 +147,7 @@ export const MENU_GROUPS: MenuGroup[] = [
         name: "DIPKOP (Kopi Susu Gula Aren)",
         priceCold: "25K",
         isSignature: true,
+        isBestSeller: true,
       },
     ],
   },
@@ -162,7 +164,12 @@ export const MENU_GROUPS: MenuGroup[] = [
     filterCategory: "Matcha",
     items: [
       { name: "Regular Matcha Latte", price: "29K" },
-      { name: "Signature Matcha Latte", price: "32K", isSignature: true },
+      {
+        name: "Signature Matcha Latte",
+        price: "32K",
+        isSignature: true,
+        isBestSeller: true,
+      },
       { name: "Coconut Matcha", price: "35K" },
       { name: "Strawberry Matcha Latte", price: "35K", isSignature: true },
       { name: "Butterscotch Matcha Latte", price: "32K" },
@@ -235,6 +242,7 @@ export const MENU_GROUPS: MenuGroup[] = [
         detail: "Resep autentik ala Singapura, creamy, gurih, bukan saus premix instan",
         price: "45K",
         isSignature: true,
+        isBestSeller: true,
       },
       { name: "Black Pepper Chicken Rice", price: "38K" },
       {

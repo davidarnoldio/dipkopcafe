@@ -73,37 +73,42 @@ export function HeroSection() {
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.28, ease: EASE_EDITORIAL }}
-              className="mt-9 flex flex-wrap items-center gap-4 sm:gap-6"
+              className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6"
             >
               <a
                 href="#menu"
-                className="group inline-flex items-center gap-3 bg-[#1E3B2F] px-7 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#F5F0E6] transition-colors duration-300 hover:bg-[#7F8C6A]"
+                className="group inline-flex items-center gap-3 bg-[#1E3B2F] px-7 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#F5F0E6] shadow-[0_12px_28px_rgba(30,59,47,0.18)] transition-all duration-300 hover:bg-[#7F8C6A] hover:shadow-[0_14px_32px_rgba(30,59,47,0.22)]"
               >
                 <span>Explore Menu</span>
                 <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </a>
 
               <a
-                href="#story"
-                className="group inline-flex items-center gap-2 border-b border-[#1E3B2F]/35 pb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-[#1E3B2F] transition-colors duration-300 hover:border-[#7F8C6A] hover:text-[#5B684A]"
+                href="#location"
+                className="group inline-flex items-center gap-2 border border-[#1E3B2F]/30 px-5 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-[#1E3B2F] transition-colors duration-300 hover:border-[#1E3B2F] hover:bg-[#1E3B2F]/5"
               >
-                <span>Our Story</span>
+                <span>Visit Depok</span>
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </motion.div>
 
-            {/* Subtle origin & craft metadata */}
+            {/* Quick Visit & Hours Strip for Immediate Discovery */}
             <motion.div
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.42, ease: EASE_EDITORIAL }}
-              className="mt-12 hidden border-t border-[#1E3B2F]/15 pt-5 sm:flex items-center gap-8 text-[11px] font-medium uppercase tracking-[0.22em] text-[#4A5D52]"
+              className="mt-10 border-t border-[#1E3B2F]/15 pt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#4A5D52]"
             >
-              <span>Aceh Gayo &amp; West Java</span>
+              <span>Jl. Kembang Beji No. 56</span>
               <span className="h-1 w-1 rounded-full bg-[#7F8C6A]" />
-              <span>First-Harvest Uji</span>
+              <span>Sel–Min · 10:00–00:00</span>
               <span className="h-1 w-1 rounded-full bg-[#7F8C6A]" />
-              <span>Small-Batch Daily</span>
+              <a
+                href="#story"
+                className="text-[#8C5D3B] underline-offset-4 hover:underline"
+              >
+                Our Story
+              </a>
             </motion.div>
           </div>
 
@@ -141,17 +146,17 @@ export function HeroSection() {
                 />
 
                 {/* Editorial caption overlay */}
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[#F5F0E6]">
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 text-[#F5F0E6]">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.26em] text-[#C8B48A]">
-                      Featured Pairings
+                      #1 Signature Pairings · From 25K
                     </p>
-                    <p className="mt-1 font-serif text-lg italic text-[#F5F0E6]">
-                      Uji Matcha Oat &amp; House Espresso
+                    <p className="mt-1 font-serif text-lg sm:text-xl italic text-[#F5F0E6]">
+                      Uji Matcha Oat &amp; Kopi Susu Gula Aren
                     </p>
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#F5F0E6]/80">
-                    01 / 26
+                  <span className="shrink-0 border border-[#C8B48A]/50 bg-[#172820]/60 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-[#F5F0E6]">
+                    Depok
                   </span>
                 </div>
               </div>
